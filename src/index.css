@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-color: #D0E1EB;
+    --text-primary: #050419;
+    --brand-blue: #0F32DC;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #D0E1EB;
+    color: #050419;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: #D0E1EB;
+    color: #050419;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Premium Pill Buttons */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  text-align: center;
+}
+
+.pill-btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25), 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.6), 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+.pill-btn--glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #050419;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.pill-btn--glass:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pill-btn--dark {
+  background: #050419;
+  color: #FCFCFC;
+  border: 1px solid #050419;
+  box-shadow: 0 4px 20px rgba(5, 4, 25, 0.15);
+}
+
+.pill-btn--dark:hover {
+  background: #0F32DC;
+  border-color: #0F32DC;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(15, 50, 220, 0.3);
+}
+
+.pill-btn--light {
+  background: #FCFCFC;
+  color: #050419;
+  border: 1px solid #FCFCFC;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pill-btn--light:hover {
+  background: #0F32DC;
+  color: #FCFCFC;
+  border-color: #0F32DC;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(15, 50, 220, 0.3);
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1.5rem;
+}
+
+.glass-card-dark {
+  background: rgba(5, 4, 25, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+}
+
+/* Navigation & Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Footer Navigation Button */
+.footer-nav-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #050419;
+  color: #FCFCFC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.25rem 2.5rem;
+}
+
+.footer-nav-card:hover {
+  background: #0F32DC;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(15, 50, 220, 0.35);
+}
+
+.footer-nav-card .arrow-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-nav-card:hover .arrow-icon {
+  transform: translateX(8px);
+}

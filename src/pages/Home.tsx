@@ -309,101 +309,119 @@ export const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <Layers className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">Frontend & Full-Stack Development</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Modern React, Next.js, and TypeScript applications engineered with scalable APIs, robust state management, and pixel-perfect responsiveness.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore Development</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
+          {[
+            {
+              index: "01",
+              tag: "Architecture & UI",
+              title: "Frontend & Full-Stack Development",
+              desc: "Modern React, Next.js, and TypeScript applications engineered with scalable APIs, robust state management, and pixel-perfect responsiveness.",
+              chips: ["React 19", "Next.js", "TypeScript", "Tailwind CSS"],
+              linkText: "Explore Development",
+              to: "/services"
+            },
+            {
+              index: "02",
+              tag: "Security & Flows",
+              title: "APIs, Payments & Authentication",
+              desc: "Turnkey integration of payment systems, secure user authentications, custom APIs, and third-party software connections.",
+              chips: ["Stripe", "OAuth 2.0", "REST / GraphQL", "Webhooks"],
+              linkText: "Explore Integrations",
+              to: "/services"
+            },
+            {
+              index: "03",
+              tag: "Growth & Speed",
+              title: "SEO & Performance Optimization",
+              desc: "Fast loading speeds, technical search engine optimization, structured schema markup, and smooth Core Web Vitals for maximum visibility.",
+              chips: ["Core Web Vitals", "SSR / Edge", "Lighthouse 95+", "Schema"],
+              linkText: "Explore Optimization",
+              to: "/services"
+            },
+            {
+              index: "04",
+              tag: "Infrastructure",
+              title: "Deployment & DevOps",
+              desc: "Automated release pipelines, reliable cloud hosting configuration, automated backups, and seamless zero-downtime shipping.",
+              chips: ["Docker", "GitHub Actions", "AWS / Cloudflare", "CI/CD"],
+              linkText: "Explore DevOps",
+              to: "/services"
+            },
+            {
+              index: "05",
+              tag: "Reliability & QA",
+              title: "Testing & QA",
+              desc: "Comprehensive testing across devices, browsers, and critical user journeys to guarantee bug-free releases and rock-solid stability.",
+              chips: ["Playwright", "Cypress", "Vitest", "E2E Testing"],
+              linkText: "Explore Testing",
+              to: "/services"
+            },
+            {
+              index: "06",
+              tag: "SLA & Maintenance",
+              title: "Maintenance & Support",
+              desc: "Rapid bug fixing, proactive dependency and security updates, database tuning, and continuous technical support as your business scales.",
+              chips: ["Bug Hotfixes", "Security Patches", "DB Indexing", "24/7 SLA"],
+              linkText: "Explore Support",
+              to: "/services"
+            }
+          ].map((card, idx) => (
+            <Link
+              key={idx}
+              to={card.to}
+              className="glass-card p-8 rounded-3xl border border-white/80 hover:border-[#0F32DC]/40 hover:shadow-2xl hover:bg-white/95 transition-all duration-400 group cursor-pointer flex flex-col justify-between h-[280px] relative overflow-hidden select-none"
+            >
+              {/* Background dynamic ambient glow on hover */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0F32DC]/5 rounded-full blur-2xl group-hover:bg-[#0F32DC]/15 group-hover:scale-150 transition-all duration-500 pointer-events-none" />
 
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">APIs, Payments & Authentication</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Turnkey integration of payment systems, secure user authentications, custom APIs, and third-party software connections.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore Integrations</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
+              <div>
+                {/* Header Badge & Index */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-black/5 text-[#050419]/70 border border-black/5 group-hover:bg-[#0F32DC]/10 group-hover:text-[#0F32DC] transition-colors">
+                    {card.tag}
+                  </span>
+                  <span className="text-xs font-mono font-bold text-[#050419]/40 group-hover:text-[#0F32DC] transition-colors">
+                    {card.index}
+                  </span>
+                </div>
 
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <Zap className="w-6 h-6" />
+                {/* Title */}
+                <h3 className="text-xl sm:text-2xl font-bold text-[#050419] group-hover:text-[#0F32DC] transition-colors duration-300 leading-snug">
+                  {card.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">SEO & Performance Optimization</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Fast loading speeds, technical search engine optimization, structured schema markup, and smooth Core Web Vitals for maximum visibility.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore Optimization</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
 
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <Terminal className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">Deployment & DevOps</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Automated release pipelines, reliable cloud hosting configuration, automated backups, and seamless zero-downtime shipping.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore DevOps</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
+              {/* Dynamic Interactive Body: Chips by default, detailed subheading on hover */}
+              <div className="relative my-auto min-h-[76px] flex items-center">
+                {/* Default State: Capability Chips */}
+                <div className="flex flex-wrap gap-1.5 transition-all duration-300 opacity-100 visible group-hover:opacity-0 group-hover:invisible group-hover:-translate-y-1 absolute inset-0 flex items-center">
+                  {card.chips.map((chip, cIdx) => (
+                    <span
+                      key={cIdx}
+                      className="px-2.5 py-1 rounded-lg bg-white/85 border border-white text-xs font-mono font-medium text-[#050419]/80 shadow-sm"
+                    >
+                      {chip}
+                    </span>
+                  ))}
+                </div>
 
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <CheckCircle2 className="w-6 h-6" />
+                {/* Hover State: Subheading Description */}
+                <div className="opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-1 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                  <p className="text-sm text-[#050419]/85 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">Testing & QA</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Comprehensive testing across devices, browsers, and critical user journeys to guarantee bug-free releases and rock-solid stability.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore Testing</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
 
-          <div className="glass-card p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center text-[#0F32DC] mb-6 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                <Cpu className="w-6 h-6" />
+              {/* Bottom Link Bar */}
+              <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#0F32DC] mt-auto">
+                <span className="flex items-center gap-1.5 group-hover:translate-x-1 transition-transform duration-300">
+                  <span>{card.linkText}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+                <span className="w-2 h-2 rounded-full bg-black/15 group-hover:bg-[#0F32DC] group-hover:scale-125 transition-all duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-3">Maintenance & Support</h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed mb-6">
-                Rapid bug fixing, proactive dependency and security updates, database tuning, and continuous technical support as your business scales.
-              </p>
-            </div>
-            <Link to="/services" className="text-xs font-semibold uppercase tracking-wider text-[#0F32DC] flex items-center gap-1 group-hover:underline">
-              <span>Explore Support</span>
-              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -520,25 +538,45 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Bottom CTA Banner */}
-      <section className="px-6 sm:px-12 max-w-[1600px] mx-auto">
-        <div className="rounded-3xl bg-[#050419] text-white p-10 sm:p-20 relative overflow-hidden text-center flex flex-col items-center shadow-2xl">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0F32DC_1px,transparent_1px)] [background-size:16px_16px]"></div>
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#57cdff] mb-4 relative z-10">
-            Immediate Tactical Engagement
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight max-w-3xl mb-6 relative z-10 leading-tight">
-            Protect your schedule, modernize your systems, and scale with confidence.
+      <section className="px-6 sm:px-12 max-w-[1600px] mx-auto mb-20">
+        <div className="rounded-3xl sm:rounded-[40px] bg-[#050419] text-white p-10 sm:p-20 relative overflow-hidden text-center flex flex-col items-center shadow-2xl border border-white/10 group">
+          {/* Subtle Ambient Glow and Grid */}
+          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#0F32DC_1px,transparent_1px)] [background-size:20px_20px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#0F32DC]/25 rounded-full blur-[120px] pointer-events-none group-hover:bg-[#0F32DC]/35 transition-all duration-700"></div>
+
+          {/* Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-[#57cdff] mb-6 relative z-10 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#57cdff]" />
+            <span>You Bring the Idea. We'll Build the Rest.</span>
+          </div>
+
+          {/* Headline */}
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl mb-6 relative z-10 leading-[1.08]">
+            Have Something <br />
+            <span className="bg-gradient-to-r from-white via-white to-[#57cdff] bg-clip-text text-transparent">
+              Worth Building?
+            </span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-xl mb-8 relative z-10">
-            Schedule a direct technical consultation with our principal architects today.
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-xl text-gray-300/90 max-w-2xl mb-10 relative z-10 leading-relaxed font-normal">
+            From the first line of code to the final deployment, we build, integrate, test, optimize, and maintain digital products that are ready for the real world.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 relative z-10">
-            <Link to="/book-a-call" className="pill-btn pill-btn--light text-base px-8 py-3.5">
-              <span>Book a Call</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 relative z-10">
+            <Link
+              to="/book-a-call"
+              className="pill-btn pill-btn--light text-sm sm:text-base px-8 py-4 flex items-center gap-2 font-semibold shadow-lg hover:shadow-white/20 transition-all hover:scale-105"
+            >
+              <span>Start a Conversation</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/case-studies" className="pill-btn pill-btn--glass text-white border-white/20 hover:bg-white/10 text-base px-8 py-3.5">
-              <span>View Case Studies</span>
+            <Link
+              to="/case-studies"
+              className="pill-btn pill-btn--glass text-white border-white/20 hover:bg-white/15 text-sm sm:text-base px-8 py-4 font-semibold transition-all hover:scale-105"
+            >
+              <span>See Our Work</span>
             </Link>
           </div>
         </div>

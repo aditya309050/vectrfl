@@ -16,8 +16,7 @@ import {
   Bug,
   LifeBuoy,
   ArrowRight,
-  Check,
-  Sparkles
+  Check
 } from 'lucide-react';
 import { PaymentModal } from '../components/PaymentModal';
 
@@ -266,10 +265,6 @@ export const Services: React.FC = () => {
     <div className="min-h-screen pt-28 px-6 sm:px-12 max-w-[1600px] mx-auto">
       {/* Page Header */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 border border-white/80 backdrop-blur-md text-xs font-semibold uppercase tracking-widest text-[#0F32DC] mb-4 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Full-Spectrum Digital Services (14 Offerings)</span>
-        </div>
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter text-[#050419] mb-6">
           High-Impact Engineering & Digital Services
         </h1>

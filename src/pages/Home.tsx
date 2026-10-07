@@ -6,7 +6,6 @@ import {
   Play,
   Pause,
   ChevronDown,
-  ExternalLink,
   Plus
 } from 'lucide-react';
 import { FluidHeroAnimation } from '../components/FluidHeroAnimation';
@@ -18,45 +17,6 @@ export const Home: React.FC = () => {
   const togglePlay = () => {
     setIsPlaying(prev => !prev);
   };
-
-  const brandStories = [
-    {
-      name: "Payoneer",
-      badge: "Financial Services",
-      desc: "Envisioning communication, animation, UI/UX, and web platforms for Payoneer's global ecosystem spanning cross-border payments, working capital, and risk management.",
-      url: "https://www.payoneer.com"
-    },
-    {
-      name: "Wiley (WileyNXT)",
-      badge: "EdTech & Learning",
-      desc: "Partnered with Wiley — a 210+ year-old American Publishing Institution — to design and build their new-age digital learning platform, brand system, and high-conversion marketing portal.",
-      url: "https://www.wiley.com"
-    },
-    {
-      name: "Taneira (Titan / Tata Group)",
-      badge: "Luxury Retail",
-      desc: "Collaborating across brand strategy, layout engineering, and digital storefront optimization for Titan's flagship apparel and textile brand.",
-      url: "https://www.taneira.com"
-    },
-    {
-      name: "Tata Health",
-      badge: "Digital Healthcare",
-      desc: "Partnered with Tata Group to design and engineer Tata Health — an intuitive 360° healthcare service offering immediate online access to medical support.",
-      url: "https://www.tatahealth.com"
-    },
-    {
-      name: "Indian School of Business (ISB)",
-      badge: "Higher Education",
-      desc: "Delivering digital strategy, frontend performance architecture, and a bold visual language for world-class executive learning programs.",
-      url: "https://www.isb.edu"
-    },
-    {
-      name: "Parker Pens",
-      badge: "Global Consumer Brand",
-      desc: "Redefining Parker Pens' digital campaign architecture and web experience to enhance direct consumer engagement and online conversion.",
-      url: "https://www.parkerpen.com"
-    }
-  ];
 
   const faqs = [
     {
@@ -316,49 +276,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. FEARLESS BRANDS SECTION (Kurage Landing-ThirdSection) */}
-      <section className="bg-[#050419] text-white py-24 sm:py-32 px-6 sm:px-12 border-t border-white/10">
-        <div className="max-w-[1600px] mx-auto">
-          {/* Section Heading */}
-          <div className="max-w-4xl mb-16 sm:mb-20">
-            <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC] block mb-3 font-mono">
-              CLIENT TESTIMONY & TRUST
-            </span>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
-              We love to work with fearless brands that believe in making a difference.
-            </h2>
-          </div>
 
-          {/* Brand Grid with Stories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {brandStories.map((brand, idx) => (
-              <div
-                key={idx}
-                className="p-8 sm:p-10 rounded-3xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-[#0F32DC]/40 transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-[#57cdff] transition-colors">
-                      {brand.name}
-                    </span>
-                    <span className="text-[10px] font-mono uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-white/10 text-gray-300 border border-white/10">
-                      {brand.badge}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-300/80 leading-relaxed font-normal mb-8">
-                    {brand.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-[#57cdff]">
-                  <span>Proven Engagement</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 4. FAQ ACCORDION SECTION (Full-Width Balanced 2-Column Layout) */}
       <section className="bg-white text-[#050419] py-24 sm:py-32 px-6 sm:px-12">

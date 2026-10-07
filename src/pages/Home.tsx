@@ -111,30 +111,30 @@ export const Home: React.FC = () => {
 
           {/* Asymmetric Showcase Grid */}
           <div className="space-y-8 sm:space-y-12">
-            {/* 1. Full-Width Video Showcase (Synchrony) */}
+            {/* 1. Full-Width Showcase (MindStep Leadership) */}
             <Link
               to="/case-studies"
-              className="block relative w-full h-[450px] sm:h-[600px] lg:h-[700px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5"
+              className="block relative w-full h-[450px] sm:h-[600px] lg:h-[700px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0e1015]"
             >
               <img
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1800&auto=format&fit=crop&q=80"
-                alt="Synchrony"
-                className="w-full h-full object-cover object-center scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="/portfolio/mindstep.png"
+                alt="MindStep Leadership Platform"
+                className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
-              {/* Kurage Frosted Glass Hover Overlay (cHoverDiv) */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 sm:p-14">
-                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
+              {/* Frosted Glass Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-14">
+                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
                   <div>
                     <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-2">
-                      DA VINCI // FULL-STACK
+                      EXECUTIVE LEADERSHIP // CMS PLATFORM
                     </span>
                     <h3 className="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
-                      Synchrony
+                      MindStep Leadership Platform
                     </h3>
                     <div className="w-12 h-0.5 bg-white mb-2" />
-                    <p className="text-xs sm:text-sm text-white/80 font-normal">
-                      The synchrony of sound, code, and optics
+                    <p className="text-xs sm:text-sm text-white/80 font-normal max-w-2xl">
+                      Modern web platform with interactive program roadmaps, custom Strapi headless CMS, and automated executive booking flows.
                     </p>
                   </div>
                   <span className="px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">
@@ -144,126 +144,126 @@ export const Home: React.FC = () => {
               </div>
             </Link>
 
-            {/* 2. Side-by-Side Pair: Endless Knot + Ping Pong */}
+            {/* 2. Side-by-Side Pair: Zunevo + Small Screen Marketing */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5"
+                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200&auto=format&fit=crop&q=80"
-                  alt="Endless Knot"
-                  className="w-full h-full object-cover scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  src="/portfolio/zunevo.png"
+                  alt="Zunevo E-Commerce Storefront"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
+                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
                     <div>
                       <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Branding & Web
+                        E-Commerce // Lifestyle
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Endless Knot</h4>
-                      <p className="text-xs text-white/80">Woven for the vogue</p>
+                      <h4 className="text-xl sm:text-2xl font-bold">Zunevo</h4>
+                      <p className="text-xs text-white/80">Handcrafted accessories & high-converting checkout</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white" />
+                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
 
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5"
+                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80"
-                  alt="Ping Pong"
-                  className="w-full h-full object-cover scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  src="/portfolio/smallscreen.png"
+                  alt="Small Screen Marketing Agency"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
+                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
                     <div>
                       <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Originals // Motion
+                        Branding // Motion & Video
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Ping Pong</h4>
-                      <p className="text-xs text-white/80">Let's go crazy.</p>
+                      <h4 className="text-xl sm:text-2xl font-bold">Small Screen Marketing</h4>
+                      <p className="text-xs text-white/80">Video storytelling reels & client funnels</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white" />
+                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
             </div>
 
-            {/* 3. Side-by-Side Pair: Payoneer + VCC Hospital */}
+            {/* 3. Side-by-Side Pair: Speakers Solutions + MyMindHub */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5"
+                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80"
-                  alt="Payoneer"
-                  className="w-full h-full object-cover scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  src="/portfolio/speakerssolutions.png"
+                  alt="Speakers Solutions Australia"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
+                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
                     <div>
                       <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Fintech Platform
+                        Talent Bureau // Web Platform
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Payoneer</h4>
-                      <p className="text-xs text-white/80">Cross-border scale & financial systems</p>
+                      <h4 className="text-xl sm:text-2xl font-bold">Speakers Solutions</h4>
+                      <p className="text-xs text-white/80">Keynote talent booking platform across Australia</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white" />
+                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
 
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5"
+                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80"
-                  alt="VCC Hospital"
-                  className="w-full h-full object-cover scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  src="/portfolio/mymindhub.png"
+                  alt="MyMindHub Mental Wellness App"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
+                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
                     <div>
                       <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Healthcare UX
+                        HealthTech // Web App
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">VCC</h4>
-                      <p className="text-xs text-white/80">We keep your heart in shape</p>
+                      <h4 className="text-xl sm:text-2xl font-bold">MyMindHub</h4>
+                      <p className="text-xs text-white/80">Mental wellness app & interactive self-care tools</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white" />
+                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
             </div>
 
-            {/* 4. Full-Width Showcase (WileyNXT) */}
+            {/* 4. Full-Width Showcase (NC Group) */}
             <Link
               to="/case-studies"
-              className="block relative w-full h-[450px] sm:h-[580px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5"
+              className="block relative w-full h-[450px] sm:h-[580px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0e1015]"
             >
               <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&auto=format&fit=crop&q=80"
-                alt="WileyNXT"
-                className="w-full h-full object-cover object-center scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                src="/portfolio/ncgrp.png"
+                alt="NC Group Scandinavian Enterprise"
+                className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 sm:p-14">
-                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 sm:p-14">
+                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
                   <div>
                     <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-2">
-                      EDTECH // BRAND & PLATFORM
+                      NORDIC ENTERPRISE // CORPORATE PORTAL
                     </span>
                     <h3 className="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
-                      WileyNXT
+                      NC Group (ncgrp.se)
                     </h3>
                     <div className="w-12 h-0.5 bg-white mb-2" />
-                    <p className="text-xs sm:text-sm text-white/80 font-normal">
-                      Empowering the next generation of digital learning
+                    <p className="text-xs sm:text-sm text-white/80 font-normal max-w-2xl">
+                      Multi-division corporate web portal for a leading Swedish enterprise group, showcasing industrial project portfolios and corporate governance.
                     </p>
                   </div>
                   <span className="px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">

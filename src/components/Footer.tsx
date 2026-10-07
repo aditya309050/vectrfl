@@ -1,84 +1,99 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#050419] text-[#FCFCFC] pt-16 pb-12 px-6 sm:px-12 mt-20">
-      <div className="max-w-[1600px] mx-auto">
-        {/* Top 3 Navigation Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          <Link
-            to="/services"
-            className="footer-nav-card group border border-white/10"
-          >
-            <span className="text-xl md:text-2xl font-medium tracking-tight">
-              Our Services
-            </span>
-            <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-white text-white group-hover:text-[#0F32DC] flex items-center justify-center transition-all duration-300">
-              <ArrowRight className="w-5 h-5 arrow-icon" />
-            </div>
-          </Link>
+    <footer className="w-full bg-[#050419] text-[#FCFCFC] pt-20 pb-12 px-6 sm:px-12 border-t border-white/10">
+      <div className="max-w-[1600px] mx-auto text-center flex flex-col items-center">
+        {/* Kurage-style Callout Header */}
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-10 max-w-4xl">
+          Experience what we've already cooked up.
+        </h2>
 
-          <Link
-            to="/case-studies"
-            className="footer-nav-card group border border-white/10"
-          >
-            <span className="text-xl md:text-2xl font-medium tracking-tight">
-              Case Studies
-            </span>
-            <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-white text-white group-hover:text-[#0F32DC] flex items-center justify-center transition-all duration-300">
-              <ArrowRight className="w-5 h-5 arrow-icon" />
-            </div>
-          </Link>
+        {/* Footer Navigation Capabilities */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-14 max-w-3xl">
+          {[
+            { name: "Branding & Strategy", to: "/services" },
+            { name: "UI/UX & Product Design", to: "/services" },
+            { name: "Web & Mobile Engineering", to: "/services" },
+            { name: "Kavix Originals", to: "/case-studies" },
+            { name: "About Studio", to: "/about" },
+            { name: "Book Consultation", to: "/book-a-call" }
+          ].map((item, idx) => (
+            <Link
+              key={idx}
+              to={item.to}
+              className="px-5 py-2.5 rounded-full bg-white/5 hover:bg-white text-white hover:text-[#050419] border border-white/10 text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
 
-          <Link
-            to="/about"
-            className="footer-nav-card group border border-white/10"
+        {/* Social / Direct Connect Icons */}
+        <div className="flex items-center gap-4 mb-12">
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/+919876543210"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Kavix WhatsApp"
+            className="w-11 h-11 rounded-full bg-white/10 hover:bg-[#25D366] text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
           >
-            <span className="text-xl md:text-2xl font-medium tracking-tight">
-              About
-            </span>
-            <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-white text-white group-hover:text-[#0F32DC] flex items-center justify-center transition-all duration-300">
-              <ArrowRight className="w-5 h-5 arrow-icon" />
-            </div>
-          </Link>
+            <MessageSquare className="w-5 h-5" />
+          </a>
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Kavix LinkedIn"
+            className="w-11 h-11 rounded-full bg-white/10 hover:bg-[#0077b5] text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+          {/* X / Twitter */}
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Kavix X / Twitter"
+            className="w-11 h-11 rounded-full bg-white/10 hover:bg-black text-white flex items-center justify-center transition-all duration-300 hover:scale-110 border border-transparent hover:border-white/20"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          {/* Instagram */}
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Kavix Instagram"
+            className="w-11 h-11 rounded-full bg-white/10 hover:bg-[#E1306C] text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
         </div>
 
         {/* Bottom Bar with Logo & Meta */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-white/10">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-10 border-t border-white/10 text-xs text-gray-400">
           <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 93 16"
-              fill="none"
-              className="h-5 w-auto"
-            >
-              <path
-                d="M9.69877 11.9986H9.49841L4.39929 0H0L5.703 13.4208C6.36614 14.9841 7.90123 15.9972 9.59718 15.9972C11.2959 15.9972 12.8282 14.9841 13.4914 13.4208L19.1972 0H14.7979L9.69877 11.9986Z"
-                fill="#FCFCFC"
-              />
-              <path
-                d="M19.4286 3.99859V11.9986C19.4286 14.2081 21.2205 15.9972 23.4272 15.9972H35.4257V12.3965H23.4272V9.79753H33.8257V6.19683H23.4272V3.59788H35.4257V0H23.4272C21.2176 0 19.4286 1.79189 19.4286 3.99859Z"
-                fill="#FCFCFC"
-              />
-              <path
-                d="M44.3598 3.99859H47.5598C49.0384 3.99859 50.328 4.80282 51.0194 5.99929H55.3058C54.4169 2.54815 51.2846 0 47.5598 0H44.3598C39.9407 0 36.3598 3.58095 36.3598 8C36.3598 12.419 39.9407 16 44.3598 16H47.5598C51.2875 16 54.4198 13.4519 55.3058 10.0007H51.0194C50.328 11.1944 49.0384 12.0014 47.5598 12.0014H44.3598C42.1503 12.0014 40.3612 10.2095 40.3612 8.00282C40.3612 5.79612 42.1531 4.00423 44.3598 4.00423V3.99859Z"
-                fill="#FCFCFC"
-              />
-              <path
-                d="M56.0395 0V3.60071H62.0388V15.9972H66.0374V3.60071H72.0367V0H56.0395Z"
-                fill="#FCFCFC"
-              />
-              <path
-                d="M92.5968 5.39824C92.5968 2.41552 90.1785 0 87.1986 0H77.4011C75.1915 0 73.4025 1.79189 73.4025 3.99859V15.9972H77.4011V10.7965H84.0409L88.2003 15.9972H92.5996L88.3414 10.6751C90.7739 10.1503 92.5996 7.98871 92.5996 5.39824H92.5968ZM88.5982 5.39824C88.5982 6.39153 87.7912 7.19859 86.7979 7.19859H77.3982V3.59788H86.7979C87.7912 3.59788 88.5982 4.40494 88.5982 5.39824Z"
-                fill="#FCFCFC"
-              />
-            </svg>
+            <Link to="/" aria-label="Kavix Home" className="block group">
+              <span className="text-xl font-black tracking-[0.25em] text-[#FCFCFC] uppercase select-none">
+                KAVIX
+              </span>
+            </Link>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
-            <p>© {new Date().getFullYear()} Vectr Consulting, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kavix Inc. All rights reserved.</p>
+
+          <div className="flex items-center gap-6">
             <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

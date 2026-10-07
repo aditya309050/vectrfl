@@ -176,16 +176,19 @@ export const CaseStudies: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-32 px-6 sm:px-12 max-w-[1600px] mx-auto pb-28">
-      {/* Editorial Header Section Matching Reference */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-20">
-        <div className="lg:col-span-5">
+      {/* Hero Header Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16 sm:mb-20">
+        <div className="lg:col-span-6">
+          <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC] block mb-3">
+            Selected Work
+          </span>
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-[#050419] leading-[1.05]">
-            Our work
+            Built. Shipped. Proven.
           </h1>
         </div>
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6 lg:pt-8">
           <p className="text-xl sm:text-2xl text-[#050419]/80 leading-relaxed font-normal">
-            We specialize in crafting, developing, and delivering digital products that spell success for our cherished clients. We excel at creating fresh and captivating websites, building robust brand systems, and producing creative content.
+            Explore websites, digital platforms and products we've designed and developed for businesses.
           </p>
         </div>
       </div>

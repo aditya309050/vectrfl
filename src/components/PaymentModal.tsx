@@ -8,8 +8,7 @@ import {
   ArrowRight,
   Download,
   Building,
-  Smartphone,
-  Sparkles
+  Smartphone
 } from 'lucide-react';
 
 interface PaymentModalProps {
@@ -115,7 +114,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
               <Lock className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold tracking-tight">Vectr Secure Checkout</h3>
+              <h3 className="text-base font-bold tracking-tight">Kavix Secure Checkout</h3>
               <p className="text-xs text-gray-300 font-mono">256-Bit Encrypted Payment Integration</p>
             </div>
           </div>

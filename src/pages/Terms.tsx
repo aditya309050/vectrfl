@@ -12,12 +12,12 @@ export const Terms: React.FC = () => {
       <div className="glass-card p-8 sm:p-12 border border-white/70 space-y-8 text-[#050419]/80 leading-relaxed text-base">
         <section>
           <h2 className="text-xl font-bold text-[#050419] mb-3">1. Agreement to Terms</h2>
-          <p>By accessing Vectr Consulting platforms and engaging our specialized engineering squads, you agree to be bound by these Terms of Service and all related Statements of Work (SOW).</p>
+          <p>By accessing Kavix platforms and engaging our specialized engineering squads, you agree to be bound by these Terms of Service and all related Statements of Work (SOW).</p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-[#050419] mb-3">2. Intellectual Property & Ownership</h2>
-          <p>Upon full milestone payment settlement, all client-specific custom code, architectural designs, and engineering artifacts created by Vectr squads become the exclusive intellectual property of the client with zero vendor lock-in.</p>
+          <p>Upon full milestone payment settlement, all client-specific custom code, architectural designs, and engineering artifacts created by Kavix squads become the exclusive intellectual property of the client with zero vendor lock-in.</p>
         </section>
 
         <section>

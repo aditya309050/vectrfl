@@ -4,6 +4,7 @@ import {
   Layout,
   Layers,
   Globe,
+  Smartphone,
   Palette,
   Link2,
   CreditCard,
@@ -13,9 +14,9 @@ import {
   Zap,
   CheckCircle2,
   Terminal,
+  Rocket,
   Bug,
   LifeBuoy,
-  ArrowRight,
   Check
 } from 'lucide-react';
 import { PaymentModal } from '../components/PaymentModal';
@@ -78,6 +79,22 @@ export const Services: React.FC = () => {
         "Responsive web architecture & cross-device compatibility"
       ],
       techStack: ["Web Apps", "SaaS", "Headless CMS", "HTML5", "TypeScript", "Next.js"]
+    },
+    {
+      id: "app-dev",
+      category: "development",
+      icon: Smartphone,
+      title: "App Development",
+      price: 2999,
+      priceLabel: "$2,999 / Project",
+      summary: "Cross-platform iOS and Android mobile applications engineered with React Native, Flutter, and native bridges.",
+      deliverables: [
+        "Native iOS & Android cross-platform builds (React Native / Flutter)",
+        "Offline caching, push notifications & biometric security (FaceID/Fingerprint)",
+        "Native device hardware integrations (Camera, GPS, Bluetooth, Accelerometer)",
+        "Pixel-perfect mobile UI design systems & fluid gesture interactions"
+      ],
+      techStack: ["React Native", "Flutter", "iOS", "Android", "TypeScript", "Expo"]
     },
     {
       id: "ui-ux",
@@ -224,6 +241,22 @@ export const Services: React.FC = () => {
       techStack: ["Docker", "GitHub Actions", "AWS", "Vercel", "Cloudflare", "Linux"]
     },
     {
+      id: "app-deployment",
+      category: "devops_qa",
+      icon: Rocket,
+      title: "App Deployment",
+      price: 1499,
+      priceLabel: "$1,499 / Setup",
+      summary: "End-to-end mobile app store release management across Apple App Store & Google Play Store, OTA updates, and CI pipelines.",
+      deliverables: [
+        "App Store Connect & Google Play Console submission & review approvals",
+        "Fastlane & GitHub Actions automated build & signing pipelines",
+        "Over-the-Air (OTA) updates via EAS / CodePush for instant hotfixes",
+        "Crash reporting, telemetry & app analytics setup (Sentry, Firebase)"
+      ],
+      techStack: ["App Store", "Google Play", "Fastlane", "Expo EAS", "TestFlight", "Firebase"]
+    },
+    {
       id: "bug-fixing",
       category: "support",
       icon: Bug,
@@ -269,18 +302,18 @@ export const Services: React.FC = () => {
           High-Impact Engineering & Digital Services
         </h1>
         <p className="text-lg text-[#050419]/75 leading-relaxed">
-          From pixel-perfect UI/UX, frontend, full-stack, and payment integrations to SEO, DevOps, Testing & QA, and dedicated Maintenance & Support — we deliver end-to-end technical excellence.
+          From pixel-perfect UI/UX, frontend, full-stack, app development, and payment integrations to SEO, DevOps, App Deployment, Testing & QA, and dedicated Maintenance & Support — we deliver end-to-end technical excellence.
         </p>
       </div>
 
       {/* Filter Tabs */}
       <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
         {[
-          { id: 'all', label: 'All Services (14)' },
-          { id: 'development', label: 'Development & UI/UX' },
+          { id: 'all', label: `All Services (${services.length})` },
+          { id: 'development', label: 'Development & Mobile Apps' },
           { id: 'integrations', label: 'APIs, Auth & Payments' },
           { id: 'optimization', label: 'SEO & Performance' },
-          { id: 'devops_qa', label: 'DevOps & Testing' },
+          { id: 'devops_qa', label: 'DevOps & App Deployment' },
           { id: 'support', label: 'Bug Fixing & Support' },
         ].map((tab) => (
           <button

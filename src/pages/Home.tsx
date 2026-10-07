@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -9,21 +9,14 @@ import {
   ExternalLink,
   Plus
 } from 'lucide-react';
+import { FluidHeroAnimation } from '../components/FluidHeroAnimation';
 
 export const Home: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = () => {
-    if (heroVideoRef.current) {
-      if (isPlaying) {
-        heroVideoRef.current.pause();
-      } else {
-        heroVideoRef.current.play().catch(() => {});
-      }
-      setIsPlaying(!isPlaying);
-    }
+    setIsPlaying(prev => !prev);
   };
 
   const brandStories = [
@@ -88,46 +81,15 @@ export const Home: React.FC = () => {
     }
   ];
 
-  const heroVideoSrc = "https://kurage-assets.s3.ap-south-1.amazonaws.com/landing_cover/Synchrony_video_animation_kurage.mp4";
-  const videoStartTime = 3.5; // Skips any intro title/text
-
-  const handleVideoLoaded = () => {
-    if (heroVideoRef.current) {
-      if (heroVideoRef.current.currentTime < videoStartTime) {
-        heroVideoRef.current.currentTime = videoStartTime;
-      }
-      heroVideoRef.current.play().catch(() => {});
-    }
-  };
-
   return (
     <div className="min-h-screen bg-[#050419] text-[#FCFCFC] selection:bg-[#0F32DC] selection:text-white">
-      {/* 1. CINEMATIC HERO (Dark Fluid Wave Animation) */}
+      {/* 1. CINEMATIC HERO (Liquid Obsidian & Molten Chrome WebGL Shader) */}
       <section className="relative w-full h-[92vh] sm:h-[96vh] lg:h-screen min-h-[650px] flex flex-col justify-between overflow-hidden bg-black">
-        {/* Fullscreen Video Background */}
+        {/* Fullscreen Liquid Obsidian Shader */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <video
-            ref={heroVideoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onLoadedMetadata={handleVideoLoaded}
-            onTimeUpdate={() => {
-              // Ensure clean loop without ever showing intro text
-              if (heroVideoRef.current && heroVideoRef.current.currentTime < 2) {
-                heroVideoRef.current.currentTime = videoStartTime;
-              }
-            }}
-            className="w-full h-full object-cover opacity-60 scale-[1.02] transition-opacity duration-1000"
-          >
-            <source
-              src={heroVideoSrc}
-              type="video/mp4"
-            />
-          </video>
-          {/* Dark Vignette Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/35 to-black/85 pointer-events-none" />
+          <FluidHeroAnimation isPlaying={isPlaying} />
+          {/* Subtle Dark Studio Vignette Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
         </div>
 
         {/* Top Spacer */}
@@ -139,17 +101,17 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-7xl sm:text-9xl md:text-[130px] lg:text-[170px] font-black tracking-[-0.04em] text-white leading-none select-none uppercase mb-6"
+            className="text-7xl sm:text-9xl md:text-[130px] lg:text-[170px] font-black tracking-[-0.04em] text-white leading-none select-none uppercase mb-6 drop-shadow-2xl"
           >
             KAVIX
           </motion.h1>
 
-          {/* Interactive Play Button */}
+          {/* Interactive Play/Pause Button */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={togglePlay}
-            aria-label="Toggle Hero Video Reel"
+            aria-label="Toggle Hero Fluid Reel"
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-white/30 bg-white/10 backdrop-blur-xl flex items-center justify-center text-white shadow-2xl hover:border-white hover:bg-white/20 transition-all duration-300 group cursor-pointer"
           >
             {isPlaying ? (
@@ -194,19 +156,11 @@ export const Home: React.FC = () => {
               to="/case-studies"
               className="block relative w-full h-[450px] sm:h-[600px] lg:h-[700px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5"
             >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster="https://kurage-assets.s3.ap-south-1.amazonaws.com/landing_cover/Kurage_video_animation_exploration.jpg"
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1800&auto=format&fit=crop&q=80"
+                alt="Synchrony"
                 className="w-full h-full object-cover object-center scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-              >
-                <source
-                  src="https://kurage-assets.s3.ap-south-1.amazonaws.com/landing_cover/Synchrony_video_animation_kurage.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              />
 
               {/* Kurage Frosted Glass Hover Overlay (cHoverDiv) */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 sm:p-14">

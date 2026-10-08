@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ThreadAnimation } from '../components/ThreadAnimation';
+import { AestheticStatCard } from '../components/AestheticStatCard';
 import {
   ArrowRight,
   TrendingUp,
@@ -59,6 +60,37 @@ export const About: React.FC = () => {
       icon: <Headphones className="w-5 h-5 text-[#0F32DC]" />,
       title: "Ongoing Support & Optimization",
       desc: "Continuous monitoring, optimization, bug fixes, and feature updates as your product grows."
+    }
+  ];
+
+  const stats = [
+    {
+      value: "5+",
+      title: "Years of Experience",
+      desc: "Designing, building, and scaling digital products for businesses and brands.",
+      icon: Clock,
+      badge: "Industry Proven"
+    },
+    {
+      value: "₹15L+",
+      title: "Project Value Delivered",
+      desc: "High-ROI digital platforms, web systems, and applications delivered on budget.",
+      icon: ShieldCheck,
+      badge: "Value Driven"
+    },
+    {
+      value: "25+",
+      title: "Clients Served",
+      desc: "Startups, consultancies, e-commerce stores, and enterprise brands worldwide.",
+      icon: Users,
+      badge: "Global Reach"
+    },
+    {
+      value: "30+",
+      title: "Projects Delivered",
+      desc: "Web applications, corporate portals, mobile products, and custom integrations.",
+      icon: Rocket,
+      badge: "Full-Cycle"
     }
   ];
 
@@ -121,97 +153,27 @@ export const About: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-left mb-10"
         >
-          <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC] block mb-2">
+          <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC] block mb-2 font-mono">
             The Numbers Behind The Work
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#050419] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-bold text-[#050419] tracking-tight">
             Proven track record of delivering real value
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 w-full">
-          {[
-            {
-              value: "5+",
-              title: "Years of Experience",
-              desc: "Designing, building, and scaling digital products for businesses and brands.",
-              icon: Clock,
-              badge: "Industry Proven"
-            },
-            {
-              value: "₹15L+",
-              title: "Project Value Delivered",
-              desc: "High-ROI digital platforms, web systems, and applications delivered on budget.",
-              icon: ShieldCheck,
-              badge: "Value Driven"
-            },
-            {
-              value: "25+",
-              title: "Clients Served",
-              desc: "Startups, consultancies, e-commerce stores, and enterprise brands worldwide.",
-              icon: Users,
-              badge: "Global Reach"
-            },
-            {
-              value: "30+",
-              title: "Projects Delivered",
-              desc: "Web applications, corporate portals, mobile products, and custom integrations.",
-              icon: Rocket,
-              badge: "Full-Cycle"
-            }
-          ].map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <motion.div
-                key={stat.title}
-                initial={{ opacity: 0, y: 35, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.55,
-                  delay: index * 0.1,
-                  ease: [0.21, 0.47, 0.32, 0.98]
-                }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 350, damping: 22 }
-                }}
-                className="glass-card p-7 sm:p-8 border border-white/80 rounded-3xl shadow-lg hover:shadow-2xl hover:border-[#0F32DC]/30 transition-all duration-300 text-left relative group overflow-hidden flex flex-col justify-between cursor-default"
-              >
-                {/* Ambient Radial Hover Glow */}
-                <div className="absolute inset-0 bg-radial from-[#0F32DC]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                {/* Decorative Top Pill Icon */}
-                <div className="relative z-10 flex items-center justify-between mb-4">
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-[#0F32DC]/5 text-[#0F32DC] border border-[#0F32DC]/10 group-hover:bg-[#0F32DC] group-hover:text-white transition-colors duration-300">
-                    {stat.badge}
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-white/80 border border-black/5 flex items-center justify-center text-[#0F32DC] shadow-xs group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <IconComponent className="w-4 h-4" />
-                  </div>
-                </div>
-
-                {/* Stat Content */}
-                <div className="relative z-10 my-auto">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-[#0F32DC] tracking-tight block mb-2 font-mono group-hover:scale-105 group-hover:text-[#0a23a0] transition-transform duration-300">
-                    {stat.value}
-                  </span>
-                  <h3 className="text-lg font-bold text-[#050419] mb-2 leading-snug">
-                    {stat.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#050419]/70 leading-relaxed">
-                    {stat.desc}
-                  </p>
-                </div>
-
-                {/* Subtle Bottom Accent Glow Line */}
-                <div className="relative z-10 mt-5 pt-3 border-t border-black/[0.04] flex items-center justify-start">
-                  <div className="h-1 w-8 rounded-full bg-gradient-to-r from-[#0F32DC]/30 to-transparent group-hover:w-16 group-hover:from-[#0F32DC] transition-all duration-500" />
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Aesthetic 3D Tilt & Interactive Spotlight Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 w-full">
+          {stats.map((stat, index) => (
+            <AestheticStatCard
+              key={stat.title}
+              value={stat.value}
+              title={stat.title}
+              desc={stat.desc}
+              icon={stat.icon}
+              badge={stat.badge}
+              index={index}
+            />
+          ))}
         </div>
       </section>
 
@@ -234,38 +196,72 @@ export const About: React.FC = () => {
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 w-full">
           {capabilities.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="glass-card p-8 border border-white/80 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 cursor-default"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.6,
+                delay: idx * 0.08,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              whileHover={{
+                y: -6,
+                scale: 1.015,
+                transition: { type: "spring", stiffness: 350, damping: 22 }
+              }}
+              className="glass-card p-8 border border-white/80 rounded-3xl shadow-sm hover:shadow-2xl hover:border-[#0F32DC]/30 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden cursor-default"
             >
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                  {item.icon}
+              {/* Radial Hover Spotlight Fill */}
+              <div className="absolute inset-0 bg-radial from-[#0F32DC]/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#0F32DC] group-hover:text-white group-hover:shadow-[0_8px_20px_rgba(15,50,220,0.25)] transition-all duration-300">
+                  <div className="group-hover:brightness-200 transition-all">
+                    {item.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#050419] mb-2.5">
+                <h3 className="text-xl font-bold text-[#050419] mb-2.5 group-hover:text-[#0F32DC] transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[#050419]/70 leading-relaxed">
+                <p className="text-sm text-[#050419]/70 leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="mt-8 pt-2 flex items-center text-[#0F32DC] group-hover:translate-x-1.5 transition-transform duration-300">
+              <div className="relative z-10 mt-8 pt-2 flex items-center gap-2 text-[#0F32DC] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1.5 transition-transform duration-300">
+                <span>Learn more</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </motion.div>
           ))}
 
           {/* Quick CTA Card with Thread Animation */}
-          <div className="rounded-3xl bg-[#06081B] text-white p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.6,
+              delay: capabilities.length * 0.08,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            whileHover={{
+              y: -6,
+              scale: 1.015,
+              transition: { type: "spring", stiffness: 350, damping: 22 }
+            }}
+            className="rounded-3xl bg-[#06081B] text-white p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group border border-white/10 hover:shadow-[0_20px_50px_rgba(15,50,220,0.35)] transition-all duration-500"
+          >
             {/* Background Radial Glow & Animated Waving Threads */}
             <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#0F32DC]/30 rounded-full blur-2xl pointer-events-none" />
             <ThreadAnimation />
 
             <div className="relative z-10">
-              <span className="text-[11px] uppercase tracking-widest font-bold text-gray-400 block mb-3">
+              <span className="text-[11px] uppercase tracking-widest font-bold text-gray-400 block mb-3 font-mono">
                 Let's Build Together
               </span>
               <h3 className="text-xl sm:text-2xl font-bold mb-2 leading-snug">
@@ -279,13 +275,13 @@ export const About: React.FC = () => {
             <div className="relative z-10">
               <Link
                 to="/book-a-call"
-                className="bg-white text-[#050419] hover:bg-gray-100 font-semibold text-xs sm:text-sm py-3 px-5 rounded-full inline-flex items-center justify-between w-auto gap-3 transition-all duration-200 shadow-md group-hover:shadow-lg"
+                className="bg-white text-[#050419] hover:bg-gray-100 font-semibold text-xs sm:text-sm py-3 px-5 rounded-full inline-flex items-center justify-between w-auto gap-3 transition-all duration-200 shadow-md group-hover:shadow-lg group-hover:scale-105"
               >
                 <span>Book a Strategy Call</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

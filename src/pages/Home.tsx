@@ -87,22 +87,25 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 2. FLUID WORK ARCHIVE (The Kurage Asymmetric Showcase) */}
-      <section className="bg-white text-[#050419] py-24 sm:py-32 px-6 sm:px-12">
+      <section className="bg-white text-[#050419] py-14 sm:py-32 px-4 sm:px-12">
         <div className="max-w-[1600px] mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#050419] text-white text-xs font-medium tracking-wide mb-4">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#050419] text-white text-[11px] sm:text-xs font-semibold tracking-wide mb-3 sm:mb-4">
                 <Plus className="w-3.5 h-3.5" />
                 <span>Selected Works</span>
               </div>
-              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#050419] leading-none">
+              <h2 className="text-3xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#050419] leading-tight sm:leading-none mb-3 sm:mb-0">
                 Featured Projects.
               </h2>
+              <p className="text-sm sm:text-base text-[#050419]/80 font-normal leading-relaxed mb-6 block sm:hidden">
+                Real solutions for real businesses. Explore our most impactful work across web, mobile, and product design.
+              </p>
             </div>
             <Link
               to="/case-studies"
-              className="pill-btn pill-btn--dark self-start md:self-auto text-xs sm:text-sm px-6 py-3 flex items-center gap-2"
+              className="pill-btn pill-btn--dark w-full sm:w-auto text-xs sm:text-sm px-6 py-3.5 sm:py-3 flex items-center justify-center gap-2 self-start md:self-auto font-medium"
             >
               <span>Explore All Case Studies</span>
               <ArrowRight className="w-4 h-4" />
@@ -114,30 +117,39 @@ export const Home: React.FC = () => {
             {/* 1. Full-Width Showcase (MindStep Leadership) */}
             <Link
               to="/case-studies"
-              className="block relative w-full h-[450px] sm:h-[600px] lg:h-[700px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0e1015]"
+              className="flex flex-col sm:block relative w-full sm:h-[600px] lg:h-[700px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
             >
-              <img
-                src="/portfolio/mindstep.png"
-                alt="MindStep Leadership Platform"
-                className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
+              <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                <img
+                  src="/portfolio/mindstep.png"
+                  alt="MindStep Leadership Platform"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
 
-              {/* Frosted Glass Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-14">
-                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
+              {/* Frosted Glass Overlay (Desktop) / Structured Card Content (Mobile) */}
+              <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-14">
+                <div className="w-full p-0 sm:p-10 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 sm:shadow-2xl">
                   <div>
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-2">
-                      EXECUTIVE LEADERSHIP // CMS PLATFORM
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-2">
+                      EXECUTIVE LEADERSHIP // CMS
                     </span>
-                    <h3 className="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
+                    <h3 className="text-2xl sm:text-2xl lg:text-4xl font-bold tracking-tight text-white mb-2 leading-snug">
                       MindStep Leadership Platform
                     </h3>
-                    <div className="w-12 h-0.5 bg-white mb-2" />
-                    <p className="text-xs sm:text-sm text-white/80 font-normal max-w-2xl">
-                      Modern web platform with interactive program roadmaps, custom Strapi headless CMS, and automated executive booking flows.
+                    <div className="hidden sm:block w-12 h-0.5 bg-white mb-2" />
+                    <p className="text-sm text-slate-300 sm:text-white/80 font-normal max-w-2xl leading-relaxed">
+                      Modern web platform with interactive program roadmaps, custom Strapi headless CMS, and automated booking flows.
                     </p>
                   </div>
-                  <span className="px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">
+
+                  {/* Mobile circular button */}
+                  <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+
+                  {/* Desktop badge button */}
+                  <span className="hidden sm:inline-block px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">
                     View Project
                   </span>
                 </div>
@@ -148,46 +160,56 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
+                className="flex flex-col sm:block relative sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
               >
-                <img
-                  src="/portfolio/zunevo.png"
-                  alt="Zunevo E-Commerce Storefront"
-                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                  <img
+                    src="/portfolio/zunevo.png"
+                    alt="Zunevo E-Commerce Storefront"
+                    className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-10">
+                  <div className="w-full p-0 sm:p-6 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        E-Commerce // Lifestyle
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-1.5">
+                        E-COMMERCE // LIFESTYLE
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Zunevo</h4>
-                      <p className="text-xs text-white/80">Handcrafted accessories & high-converting checkout</p>
+                      <h4 className="text-2xl font-bold mb-1.5">Zunevo</h4>
+                      <p className="text-sm text-slate-300 sm:text-white/80 leading-relaxed">Handcrafted accessories & high-converting checkout</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
+                    <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                    <ArrowRight className="hidden sm:block w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
 
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
+                className="flex flex-col sm:block relative sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
               >
-                <img
-                  src="/portfolio/smallscreen.png"
-                  alt="Small Screen Marketing Agency"
-                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                  <img
+                    src="/portfolio/smallscreen.png"
+                    alt="Small Screen Marketing Agency"
+                    className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-10">
+                  <div className="w-full p-0 sm:p-6 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Branding // Motion & Video
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-1.5">
+                        BRANDING // MOTION & VIDEO
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Small Screen Marketing</h4>
-                      <p className="text-xs text-white/80">Video storytelling reels & client funnels</p>
+                      <h4 className="text-2xl font-bold mb-1.5">Small Screen Marketing</h4>
+                      <p className="text-sm text-slate-300 sm:text-white/80 leading-relaxed">Video storytelling reels & client funnels</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
+                    <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                    <ArrowRight className="hidden sm:block w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
@@ -197,46 +219,56 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
+                className="flex flex-col sm:block relative sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
               >
-                <img
-                  src="/portfolio/speakerssolutions.png"
-                  alt="Speakers Solutions Australia"
-                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                  <img
+                    src="/portfolio/speakerssolutions.png"
+                    alt="Speakers Solutions Australia"
+                    className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-10">
+                  <div className="w-full p-0 sm:p-6 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        Talent Bureau // Web Platform
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-1.5">
+                        TALENT BUREAU // WEB PLATFORM
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">Speakers Solutions</h4>
-                      <p className="text-xs text-white/80">Keynote talent booking platform across Australia</p>
+                      <h4 className="text-2xl font-bold mb-1.5">Speakers Solutions</h4>
+                      <p className="text-sm text-slate-300 sm:text-white/80 leading-relaxed">Keynote talent booking platform across Australia</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
+                    <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                    <ArrowRight className="hidden sm:block w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
 
               <Link
                 to="/case-studies"
-                className="block relative h-[420px] sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0e1015]"
+                className="flex flex-col sm:block relative sm:h-[520px] rounded-3xl overflow-hidden group shadow-lg border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
               >
-                <img
-                  src="/portfolio/mymindhub.png"
-                  alt="MyMindHub Mental Wellness App"
-                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6 sm:p-10">
-                  <div className="w-full p-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex items-center justify-between gap-4">
+                <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                  <img
+                    src="/portfolio/mymindhub.png"
+                    alt="MyMindHub Mental Wellness App"
+                    className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-10">
+                  <div className="w-full p-0 sm:p-6 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-1">
-                        HealthTech // Web App
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-1.5">
+                        HEALTHTECH // WEB APP
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold">MyMindHub</h4>
-                      <p className="text-xs text-white/80">Mental wellness app & interactive self-care tools</p>
+                      <h4 className="text-2xl font-bold mb-1.5">MyMindHub</h4>
+                      <p className="text-sm text-slate-300 sm:text-white/80 leading-relaxed">Mental wellness app & interactive self-care tools</p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-white shrink-0" />
+                    <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                    <ArrowRight className="hidden sm:block w-5 h-5 text-white shrink-0" />
                   </div>
                 </div>
               </Link>
@@ -245,28 +277,37 @@ export const Home: React.FC = () => {
             {/* 4. Full-Width Showcase (NC Group) */}
             <Link
               to="/case-studies"
-              className="block relative w-full h-[450px] sm:h-[580px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0e1015]"
+              className="flex flex-col sm:block relative w-full sm:h-[580px] rounded-3xl sm:rounded-[36px] overflow-hidden group shadow-xl border border-black/5 bg-[#0b0c10] sm:bg-[#0e1015]"
             >
-              <img
-                src="/portfolio/ncgrp.png"
-                alt="NC Group Scandinavian Enterprise"
-                className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8 sm:p-14">
-                <div className="w-full p-6 sm:p-10 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
+              <div className="w-full h-[280px] sm:h-full overflow-hidden">
+                <img
+                  src="/portfolio/ncgrp.png"
+                  alt="NC Group Scandinavian Enterprise"
+                  className="w-full h-full object-cover object-top scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <div className="relative sm:absolute inset-0 bg-[#0b0c10] sm:bg-gradient-to-t sm:from-black/80 sm:via-black/20 sm:to-transparent sm:bg-black/20 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between sm:justify-end p-6 sm:p-14">
+                <div className="w-full p-0 sm:p-10 rounded-2xl bg-transparent sm:bg-black/60 sm:backdrop-blur-2xl sm:border sm:border-white/20 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 sm:shadow-2xl">
                   <div>
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#57cdff] block mb-2">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8] block mb-2">
                       NORDIC ENTERPRISE // CORPORATE PORTAL
                     </span>
-                    <h3 className="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
+                    <h3 className="text-2xl sm:text-2xl lg:text-4xl font-bold tracking-tight text-white mb-2 leading-snug">
                       NC Group (ncgrp.se)
                     </h3>
-                    <div className="w-12 h-0.5 bg-white mb-2" />
-                    <p className="text-xs sm:text-sm text-white/80 font-normal max-w-2xl">
+                    <div className="hidden sm:block w-12 h-0.5 bg-white mb-2" />
+                    <p className="text-sm text-slate-300 sm:text-white/80 font-normal max-w-2xl leading-relaxed">
                       Multi-division corporate web portal for a leading Swedish enterprise group, showcasing industrial project portfolios and corporate governance.
                     </p>
                   </div>
-                  <span className="px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">
+
+                  {/* Mobile circular button */}
+                  <div className="flex sm:hidden w-12 h-12 rounded-full border border-white/20 bg-white/5 items-center justify-center text-white shrink-0 mt-3">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+
+                  {/* Desktop badge button */}
+                  <span className="hidden sm:inline-block px-5 py-2.5 rounded-full bg-white text-[#050419] font-bold text-xs uppercase tracking-wider self-start sm:self-auto shrink-0 shadow-md">
                     View Case Study
                   </span>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ThreadAnimation } from '../components/ThreadAnimation';
 import {
   ArrowRight,
   TrendingUp,
@@ -9,7 +10,7 @@ import {
   ShoppingBag,
   Layers,
   Cpu,
-  LifeBuoy,
+  Headphones,
   Users,
   Clock,
   Rocket,
@@ -37,27 +38,27 @@ export const About: React.FC = () => {
     {
       icon: <Globe className="w-5 h-5 text-[#0F32DC]" />,
       title: "Websites & Brand Platforms",
-      desc: "High-performance, beautifully responsive websites crafted with modern frameworks, animations, and SEO-optimized architecture."
+      desc: "High-performance, responsive websites with modern frameworks, animations, and SEO-ready architecture."
     },
     {
       icon: <ShoppingBag className="w-5 h-5 text-[#0F32DC]" />,
       title: "E-Commerce & Storefronts",
-      desc: "Frictionless checkout experiences, custom cart drawers, payment gateways, and automated inventory sync built for high conversion."
+      desc: "Conversion-focused storefronts with custom carts, payments, and automated inventory workflows."
     },
     {
       icon: <Layers className="w-5 h-5 text-[#0F32DC]" />,
       title: "Full-Stack Web Applications",
-      desc: "Interactive dashboards, SaaS web apps, and member portals engineered with scalable databases, secure auth, and clean APIs."
+      desc: "Scalable dashboards, SaaS platforms, and portals with secure authentication and clean APIs."
     },
     {
       icon: <Cpu className="w-5 h-5 text-[#0F32DC]" />,
       title: "Integrations & Deployment",
-      desc: "Third-party API connectors, CRM webhooks, headless CMS setups, and automated CI/CD deployment pipelines."
+      desc: "API integrations, CRM connections, headless CMS setups, and automated CI/CD pipelines."
     },
     {
-      icon: <LifeBuoy className="w-5 h-5 text-[#0F32DC]" />,
+      icon: <Headphones className="w-5 h-5 text-[#0F32DC]" />,
       title: "Ongoing Support & Optimization",
-      desc: "Continuous monitoring, speed optimization, bug fixes, and feature iterations to keep your digital product thriving as you grow."
+      desc: "Continuous monitoring, optimization, bug fixes, and feature updates as your product grows."
     }
   ];
 
@@ -118,7 +119,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="text-left mb-10"
         >
           <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC] block mb-2">
             The Numbers Behind The Work
@@ -128,7 +129,7 @@ export const About: React.FC = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 w-full">
           {[
             {
               value: "5+",
@@ -176,7 +177,7 @@ export const About: React.FC = () => {
                   scale: 1.02,
                   transition: { type: "spring", stiffness: 350, damping: 22 }
                 }}
-                className="glass-card p-7 sm:p-8 border border-white/80 rounded-3xl shadow-lg hover:shadow-2xl hover:border-[#0F32DC]/30 transition-all duration-300 text-center relative group overflow-hidden flex flex-col justify-between cursor-default"
+                className="glass-card p-7 sm:p-8 border border-white/80 rounded-3xl shadow-lg hover:shadow-2xl hover:border-[#0F32DC]/30 transition-all duration-300 text-left relative group overflow-hidden flex flex-col justify-between cursor-default"
               >
                 {/* Ambient Radial Hover Glow */}
                 <div className="absolute inset-0 bg-radial from-[#0F32DC]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -205,8 +206,8 @@ export const About: React.FC = () => {
                 </div>
 
                 {/* Subtle Bottom Accent Glow Line */}
-                <div className="relative z-10 mt-5 pt-3 border-t border-black/[0.04] flex items-center justify-center">
-                  <div className="h-1 w-8 rounded-full bg-gradient-to-r from-transparent via-[#0F32DC]/30 to-transparent group-hover:w-16 group-hover:via-[#0F32DC] transition-all duration-500" />
+                <div className="relative z-10 mt-5 pt-3 border-t border-black/[0.04] flex items-center justify-start">
+                  <div className="h-1 w-8 rounded-full bg-gradient-to-r from-[#0F32DC]/30 to-transparent group-hover:w-16 group-hover:from-[#0F32DC] transition-all duration-500" />
                 </div>
               </motion.div>
             );
@@ -216,60 +217,74 @@ export const About: React.FC = () => {
 
       {/* Section: WHAT WE DO */}
       <section className="mb-24 sm:mb-28">
-        <div className="max-w-4xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-black/5 shadow-xs mb-3">
+        <div className="text-left mb-12 sm:mb-14 max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-black/5 shadow-xs mb-4">
             <TrendingUp className="w-3.5 h-3.5 text-[#0F32DC]" />
             <span className="text-xs uppercase tracking-widest font-bold text-[#0F32DC]">
               What We Do
             </span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#050419] leading-tight">
-            We help businesses turn ideas into reliable digital products — from websites and e-commerce platforms to full-stack applications, integrations, deployment and ongoing support.
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#050419] leading-[1.15] mb-4">
+            We build digital products <br className="hidden sm:inline" />
+            that move <span className="text-[#0F32DC]">businesses forward.</span>
           </h2>
+          <p className="text-base sm:text-lg text-[#050419]/70 max-w-2xl leading-relaxed">
+            From high-performance websites and e-commerce platforms to full-stack applications, integrations, deployment, and ongoing support.
+          </p>
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {capabilities.map((item, idx) => (
             <div
               key={idx}
-              className={`glass-card p-8 border border-white/80 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 ${
-                idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className="glass-card p-8 border border-white/80 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 cursor-default"
             >
-              <div className="w-11 h-11 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center mb-6">
-                {item.icon}
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#0F32DC]/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#050419] mb-2.5">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#050419]/70 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#050419] mb-2.5">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#050419]/75 leading-relaxed">
-                {item.desc}
-              </p>
+
+              <div className="mt-8 pt-2 flex items-center text-[#0F32DC] group-hover:translate-x-1.5 transition-transform duration-300">
+                <ArrowRight className="w-4 h-4" />
+              </div>
             </div>
           ))}
 
-          {/* Quick CTA Card */}
-          <div className="rounded-3xl bg-[#050419] text-white p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0F32DC]/30 rounded-full blur-2xl pointer-events-none" />
-            <div>
-              <span className="text-xs uppercase tracking-widest font-bold text-[#57cdff] block mb-2">
+          {/* Quick CTA Card with Thread Animation */}
+          <div className="rounded-3xl bg-[#06081B] text-white p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
+            {/* Background Radial Glow & Animated Waving Threads */}
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#0F32DC]/30 rounded-full blur-2xl pointer-events-none" />
+            <ThreadAnimation />
+
+            <div className="relative z-10">
+              <span className="text-[11px] uppercase tracking-widest font-bold text-gray-400 block mb-3">
                 Let's Build Together
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2 leading-snug">
                 Have a project or product in mind?
               </h3>
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
-                Get in touch for a free scoping session and clear project roadmap.
+              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-6">
+                Tell us what you're building and we'll help map it out.
               </p>
             </div>
-            <Link
-              to="/book-a-call"
-              className="pill-btn pill-btn--light text-xs sm:text-sm py-3 px-6 flex items-center justify-between font-semibold group-hover:bg-[#E2F700] transition-colors"
-            >
-              <span>Book a Strategy Call</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+
+            <div className="relative z-10">
+              <Link
+                to="/book-a-call"
+                className="bg-white text-[#050419] hover:bg-gray-100 font-semibold text-xs sm:text-sm py-3 px-5 rounded-full inline-flex items-center justify-between w-auto gap-3 transition-all duration-200 shadow-md group-hover:shadow-lg"
+              >
+                <span>Book a Strategy Call</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
